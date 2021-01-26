@@ -36,7 +36,14 @@ public class UsersViewController {
     @GetMapping("/edit/{id}")
     public ModelAndView editUser(@PathVariable("id") Long id) {
         ModelAndView mv = new ModelAndView("detailUsers");
-        mv.addObject("user", usersService.findById(id));
+        var userOrEmpty = usersService.findById(id);
+        UserDTO user = new UserDTO();
+
+        if (userOrEmpty.isPresent()) {
+            user = userOrEmpty.get();
+        }
+
+        mv.addObject("user", user);
         return mv;
     }
 }
