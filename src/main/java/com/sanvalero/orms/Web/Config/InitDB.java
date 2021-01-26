@@ -1,4 +1,4 @@
-package com.sanvalero.orms.Web;
+package com.sanvalero.orms.Web.Config;
 
 import com.sanvalero.orms.Repositories.Entities.UserEntity;
 import com.sanvalero.orms.Repositories.Interface.UsersRepository;
