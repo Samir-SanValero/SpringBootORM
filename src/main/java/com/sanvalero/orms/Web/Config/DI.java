@@ -1,5 +1,6 @@
 package com.sanvalero.orms.Web.Config;
 
+import com.sanvalero.orms.Services.PostsServices;
 import com.sanvalero.orms.Services.UsersServices;
 
 import org.modelmapper.ModelMapper;
@@ -12,6 +13,11 @@ public class DI {
     @Bean
     UsersServices createUserService() {
         return new UsersServices();
+    }
+
+    @Bean
+    PostsServices createPostsService() {
+        return new PostsServices();
     }
 
     @Bean

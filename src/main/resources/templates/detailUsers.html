@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Detail user</title>
 </head>
 <body th:object='${user}'>
     <label>Detail</label>
 
-    <form   th:action="*{id} == null?
+    <form   th:action="*{id} == 0?
                     @{/users/v1} : @{|users/v1/*{id}|}"
             th:method="POST"
             th:value="*{id}">
@@ -29,6 +29,10 @@
                 <input type="submit" th:value="#{submit}">
             </p>
     </form>
+
+    <script>
+        
+    </script>
 
 </body>
 </html>

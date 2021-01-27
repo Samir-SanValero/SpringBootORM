@@ -22,7 +22,7 @@ public class UsersViewController {
     @GetMapping
     public ModelAndView UserV2() {
         ModelAndView mv = new ModelAndView("listUsers");
-        mv.addObject("user", usersService.getAll());
+        mv.addObject("users", usersService.getAll());
         return mv;
     }
 

@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>List user</title>
 </head>
-<body>
-    <label>List</label>
-</body>
+
+    <body>
+        <label>List</label>
+
+        <div></div>
+
+        <li th:each="user : ${users}"
+            th:object="${user}">
+
+            <span style="color: red"
+                th:text="*{name}">
+            </span>
+
+        </li>
+    </body>
+
 </html>
