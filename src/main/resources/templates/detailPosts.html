@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail post</title>
+</head>
+<body th:object='${post}'>
+    <label>Detail</label>
+
+    <form   th:action="*{id} == 0?
+                    @{/posts/v1} : @{|posts/v1/*{id}|}"
+            th:method="POST"
+            th:value="*{id}">
+
+            <p th:if="*{id} != null">
+                <span th:text="#{id}"></span>
+
+                <input th:field="*{id}">
+            </p>
+
+            <p>
+                <span th:text="#{title}"></span>
+
+                <input th:field="*{title}">
+            </p>
+
+            <p>
+                <span th:text="#{description}"></span>
+
+                <input th:field="*{description}">
+            </p>
+
+            <p>
+                <input type="submit" th:value="#{submit}">
+            </p>
+    </form>
+
+    <script>
+
+    </script>
+
+</body>
+</html>
