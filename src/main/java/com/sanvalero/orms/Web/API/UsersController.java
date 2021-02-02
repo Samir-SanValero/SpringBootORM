@@ -3,6 +3,7 @@ package com.sanvalero.orms.Web.API;
 import java.util.List;
 
 import com.sanvalero.orms.Services.UsersServices;
+import com.sanvalero.orms.Services.Models.PostDTO;
 import com.sanvalero.orms.Services.Models.UserDTO;
 
 import org.springframework.web.bind.annotation.DeleteMapping;

@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import com.sanvalero.orms.Repositories.Entities.UserEntity;
 import com.sanvalero.orms.Repositories.Interface.UsersRepository;
+import com.sanvalero.orms.Services.Models.PostDTO;
 import com.sanvalero.orms.Services.Models.UserDTO;
 
 import org.modelmapper.ModelMapper;

@@ -12,6 +12,7 @@ public class PostEntity {
     private @Id @GeneratedValue Long id;
     private String title;
     private String description;
+    private Long userId;
 
     public PostEntity() {}
 
@@ -42,6 +43,14 @@ public class PostEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
 }

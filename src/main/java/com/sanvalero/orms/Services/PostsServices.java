@@ -11,6 +11,7 @@ import com.sanvalero.orms.Services.Models.PostDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 public class PostsServices {
 
     @Autowired
@@ -24,12 +25,22 @@ public class PostsServices {
         .collect(Collectors.toList());
     }
 
+    public List<PostDTO> findByUserId(Long userId) {
+        return postsRepository.findByUserId(userId).stream().map(x -> modelMapper.map(x, PostDTO.class))
+        .collect(Collectors.toList());
+    }
+
+    public List<PostDTO> filterSalary(Long salary) {
+        return postsRepository.filterSalary(salary).stream().map(x -> modelMapper.map(x, PostDTO.class))
+        .collect(Collectors.toList());
+    }
+
     public PostDTO add(PostDTO post) {
-        return modelMapper.map(resultUser(post), PostDTO.class);
+        return modelMapper.map(resultPost(post), PostDTO.class);
     }
 
     public PostDTO update(Long id, PostDTO post) {
-        return modelMapper.map(resultUser(post), PostDTO.class);
+        return modelMapper.map(resultPost(post), PostDTO.class);
     }
 
     public void delete(Long id) {
@@ -50,7 +61,7 @@ public class PostsServices {
         }
     }
 
-    private PostEntity resultUser(PostDTO post) {
+    private PostEntity resultPost(PostDTO post) {
         PostEntity entity = modelMapper.map(post, PostEntity.class);
         PostEntity result = postsRepository.save(entity);
         return result;
