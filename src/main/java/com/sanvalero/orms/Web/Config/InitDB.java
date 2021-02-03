@@ -19,7 +19,7 @@ public class InitDB {
             repository.save(new UserEntity("User 1", 2000L));
             repository.save(new UserEntity("User 2", 1000L));
 
-            for (Long i = 0L; i < 500.000; i++) {
+            for (Long i = 0L; i < 500000; i++) {
                 postsRepository.save(new PostEntity("title", "description", i));
             }
         };
