@@ -2,6 +2,7 @@ package com.sanvalero.orms.Services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 import com.sanvalero.orms.Repositories.Entities.PostEntity;

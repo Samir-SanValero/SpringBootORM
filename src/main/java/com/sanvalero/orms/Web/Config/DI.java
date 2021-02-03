@@ -1,5 +1,6 @@
 package com.sanvalero.orms.Web.Config;
 
+import com.sanvalero.orms.Services.PostsAsyncServices;
 import com.sanvalero.orms.Services.PostsServices;
 import com.sanvalero.orms.Services.UsersServices;
 
@@ -18,6 +19,11 @@ public class DI {
     @Bean
     PostsServices createPostsService() {
         return new PostsServices();
+    }
+
+    @Bean
+    PostsAsyncServices createPostsAsyncService() {
+        return new PostsAsyncServices();
     }
 
     @Bean

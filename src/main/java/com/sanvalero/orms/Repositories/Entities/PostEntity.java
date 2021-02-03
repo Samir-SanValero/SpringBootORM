@@ -16,9 +16,10 @@ public class PostEntity {
 
     public PostEntity() {}
 
-    public PostEntity(String title, String description) {
+    public PostEntity(String title, String description, Long userId) {
         this.title = title;
         this.description = description;
+        this.userId = userId;
     }
 
     public Long getId() {
