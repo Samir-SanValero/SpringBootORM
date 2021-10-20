@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("posts/v1")
+@RequestMapping("post/v2")
 public class PostsController {
     private final PostsServices postsServices;
 
@@ -27,19 +27,24 @@ public class PostsController {
         this.postsServices = postsServices;
     }
 
-    @GetMapping()
-    public List<PostDTO> GetPosts(@RequestParam(name="userId", required = false, defaultValue = "0") Long userId) {
-
-        List<PostDTO> result = null;
-
-        if (userId != 0) {
-            result = postsServices.findByUserId(userId);
-        } else {
-            result = postsServices.getAll();
-        }
-
-        return result;
+    @GetMapping(value = "/hi")
+    public String hello() {
+        return "post";
     }
+
+    // @GetMapping()
+    // public List<PostDTO> GetPosts(@RequestParam(name="userId", required = false, defaultValue = "0") Long userId) {
+
+    //     List<PostDTO> result = null;
+
+    //     if (userId != 0) {
+    //         result = postsServices.findByUserId(userId);
+    //     } else {
+    //         result = postsServices.getAll();
+    //     }
+
+    //     return result;
+    // }
 
     @GetMapping("/salary")
     public List<PostDTO> filterSalary(@RequestParam(name = "id", required = false, defaultValue = "0") Long salary) {

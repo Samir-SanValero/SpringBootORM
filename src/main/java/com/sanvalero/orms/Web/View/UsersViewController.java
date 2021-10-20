@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-@RequestMapping("/users")
+@RequestMapping("/users/view")
 @Controller
 public class UsersViewController {
     private final UsersServices usersService;
